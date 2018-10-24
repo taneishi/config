@@ -1,6 +1,4 @@
 # alias
-alias rm="trash"
-alias undel="trash -U"
 alias ls="ls --color=auto"
 alias sl="ls"
 alias grep="grep --color=auto"
