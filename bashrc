@@ -21,7 +21,7 @@ PS1='[\[\033[01;32m\]\h\[\033[00m\]]\$ '
 PROMPT_COMMAND='if [ $TERM == "screen" ]; then printf "\ek${PWD/$HOME/~}\e\\"; fi'
 
 if [ -f ~/config/alias ]; then
-    . ~/config/alias
+    . $HOME/config/alias
 fi
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -30,22 +30,12 @@ fi
 
 # environment variables
 PATH=/usr/sbin:/usr/bin:/usr/local/bin:/sbin:/bin
-if [ -d $HOME/.local/bin ]; then PATH=$HOME/.local/bin:$PATH; fi
 export PATH
 export EDITOR="vim -u ~/config/vimrc"
 
-export CUDA_ROOT=/usr/local/cuda
-export LD_LIBRARY_PATH=$CUDA_ROOT/lib64
-export CPATH=$CUDA_ROOT/include
-export PATH=$CUDA_ROOT/bin:$PATH
-
 if [ -d $HOME/miniconda3 ]; then 
-    export PATH=$HOME/miniconda3/bin:$PATH
+    . $HOME/miniconda3/etc/profile.d/cond.sh
     export PYTHONSTARTUP=$HOME/config/startup.py
-fi
-
-if [ -e $HOME/intel/bin/compilervars.sh ]; then
-    source $HOME/intel/bin/compilervars.sh intel64
 fi
 
 function _expand(){ return 0; }
