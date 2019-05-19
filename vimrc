@@ -71,15 +71,3 @@ set vb t_vb=
 set laststatus=2
 
 nmap n nzz
-
-function Retab()
-    set ts=2
-    set noexpandtab
-    retab!
-    set ts=4
-    set expandtab
-    retab!
-    return
-endfunction
-
-autocmd BufRead,BufNewFile *.pde set syntax=java
