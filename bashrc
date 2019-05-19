@@ -21,7 +21,7 @@ PS1='[\[\033[01;32m\]\h\[\033[00m\]]\$ '
 PROMPT_COMMAND='if [ $TERM == "screen" ]; then printf "\ek${PWD/$HOME/~}\e\\"; fi'
 
 if [ -f ~/config/alias ]; then
-    . $HOME/config/alias
+    . ~/config/alias
 fi
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -34,7 +34,14 @@ export PATH
 export EDITOR="vim -u ~/config/vimrc"
 
 if [ -d $HOME/miniconda3 ]; then 
-    . $HOME/miniconda3/etc/profile.d/cond.sh
+    source $HOME/miniconda3/etc/profile.d/conda.sh
+    export PATH=$HOME/miniconda3/bin:$PATH
+    export PYTHONSTARTUP=$HOME/config/startup.py
+fi
+
+if [ -d $HOME/anaconda3 ]; then 
+    source $HOME/anaconda3/etc/profile.d/conda.sh
+    export PATH=$HOME/anaconda3/bin:$PATH
     export PYTHONSTARTUP=$HOME/config/startup.py
 fi
 
