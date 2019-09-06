@@ -45,6 +45,16 @@ if [ -d $HOME/anaconda3 ]; then
     export PYTHONSTARTUP=$HOME/config/startup.py
 fi
 
+# To enable agent forwarding when screen is reconnected.
+AUTH_SOCK="$HOME/.ssh/.ssh-auth-sock"
+if [ -S "$AUTH_SOCK" ]; then
+    export SSH_AUTH_SOCK=$AUTH_SOCK
+elif [ ! -S "$SSH_AUTH_SOCK" ]; then
+    export SSH_AUTH_SOCK=$AUTH_SOCK
+elif [ ! -L "$SSH_AUTH_SOCK" ]; then
+    ln -snf "$SSH_AUTH_SOCK" $AUTH_SOCK && export SSH_AUTH_SOCK=$AUTH_SOCK
+fi
+
 function _expand(){ return 0; }
 
 unset command_not_found_handle
