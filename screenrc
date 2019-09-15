@@ -1,5 +1,9 @@
 source /etc/screenrc
+defutf8 on
+defencoding utf8
+encoding utf8 utf8
 caption always "%{= dG}%-Lw%50> %n%f* %t %{= dG}%+Lw%< %= %H %0c %{-}"
 startup_message off
 defscrollback 25000
 vbell off
+shell /bin/bash
