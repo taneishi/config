@@ -1,1 +1,1 @@
-Simple lightweight configuration files for a Linux environment.
+Lightweight configuration files for general Linux environment.
