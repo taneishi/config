@@ -1,7 +1,0 @@
-# alias
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias vim="vim -u ~/config/vimrc"
-alias vi="vim"
-alias df="df -h"

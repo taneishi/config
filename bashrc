@@ -55,4 +55,10 @@ fi
 
 function _expand(){ return 0; }
 
+# alias
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias vim="vim -u ~/config/vimrc"
+alias vi="vim"
+
 unset command_not_found_handle
