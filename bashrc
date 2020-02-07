@@ -36,13 +36,11 @@ export EDITOR="vim -u ~/config/vimrc"
 if [ -d $HOME/miniconda3 ]; then 
     source $HOME/miniconda3/etc/profile.d/conda.sh
     export PATH=$HOME/miniconda3/bin:$PATH
-    export PYTHONSTARTUP=$HOME/config/startup.py
 fi
 
 if [ -d $HOME/anaconda3 ]; then 
     source $HOME/anaconda3/etc/profile.d/conda.sh
     export PATH=$HOME/anaconda3/bin:$PATH
-    export PYTHONSTARTUP=$HOME/config/startup.py
 fi
 
 # To enable agent forwarding when screen is reconnected.
