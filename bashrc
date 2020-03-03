@@ -33,11 +33,6 @@ PATH=/usr/sbin:/usr/bin:/usr/local/bin:/sbin:/bin
 export PATH
 export EDITOR="vim -u ~/config/vimrc"
 
-if [ -d $HOME/miniconda3 ]; then 
-    source $HOME/miniconda3/etc/profile.d/conda.sh
-    export PATH=$HOME/miniconda3/bin:$PATH
-fi
-
 if [ -d $HOME/anaconda3 ]; then 
     source $HOME/anaconda3/etc/profile.d/conda.sh
     export PATH=$HOME/anaconda3/bin:$PATH
