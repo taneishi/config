@@ -20,10 +20,6 @@ shopt -s checkwinsize
 PS1='[\[\033[01;32m\]\h\[\033[00m\]]\$ '
 PROMPT_COMMAND='if [ $TERM == "screen" ]; then printf "\ek${PWD/$HOME/~}\e\\"; fi'
 
-if [ -f ~/config/alias ]; then
-    . ~/config/alias
-fi
-
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
@@ -32,11 +28,6 @@ fi
 PATH=/usr/sbin:/usr/bin:/usr/local/bin:/sbin:/bin
 export PATH
 export EDITOR="vim -u ~/config/vimrc"
-
-if [ -d $HOME/anaconda3 ]; then 
-    source $HOME/anaconda3/etc/profile.d/conda.sh
-    export PATH=$HOME/anaconda3/bin:$PATH
-fi
 
 # To enable agent forwarding when screen is reconnected.
 AUTH_SOCK="$HOME/.ssh/.ssh-auth-sock"
