@@ -1,8 +1,11 @@
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth:erasedups
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -46,5 +49,6 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias vim="vim -u ~/config/vimrc"
 alias vi="vim"
+alias screen="screen -c ~/config/screenrc"
 
 unset command_not_found_handle
