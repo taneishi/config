@@ -1,31 +1,11 @@
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTFILE=$HOME/.histfile
 HISTSIZE=50000
 HISTFILESIZE=50000
 HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
 PS1='[\[\033[01;32m\]\h\[\033[00m\]]\$ '
-PROMPT_COMMAND='if [ $TERM == "screen" ]; then printf "\ek${PWD/$HOME/~}\e\\"; fi'
-
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#PROMPT_COMMAND='if [ $TERM == "screen" ]; then printf "\ek${PWD/$HOME/~}\e\\"; fi'
 
 # environment variables
 PATH=/usr/sbin:/usr/bin:/usr/local/bin:/sbin:/bin
