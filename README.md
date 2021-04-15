@@ -1,1 +1,1 @@
-# Lightweight configuration files for general Linux environment
+# Lightweight configuration files for Ubuntu Linux
